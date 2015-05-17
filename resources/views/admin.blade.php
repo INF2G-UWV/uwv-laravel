@@ -7,6 +7,8 @@
 	<title>UWV Quickscan</title>
 
 	<link href="{{ asset('/bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('/bower_components/uikit/css/uikit.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('/bower_components/uikit/css/components/nestable.min.css') }}" rel="stylesheet">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -62,8 +64,11 @@
 	<!-- Scripts -->
 	<script src="{{ asset('/bower_components/jquery/dist/jquery.min.js') }}"></script>
 	<script src="{{ asset('/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('/bower_components/uikit/js/uikit.min.js') }}"></script>
+	<script src="{{ asset('/bower_components/uikit/js/components/nestable.min.js') }}"></script>
 	<script src="{{ asset('/3rdparty/blockly/blockly_compressed.js') }}"></script>
 	<script src="{{ asset('/3rdparty/blockly/blocks_compressed.js') }}"></script>
 	<script src="{{ asset('/3rdparty/blockly/msg/js/nl.js') }}"></script>
+	<script src="{{ asset('/app/app.js') }}"></script>
 </body>
 </html>
