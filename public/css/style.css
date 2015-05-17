@@ -1,0 +1,136 @@
+/* Resets
+==================*/
+
+body {
+	margin: 0;
+	background-color: #F9F9F9;
+}
+
+/* Topbar
+==================*/
+
+.topbar {
+	background-color: #0099FF;
+	border-bottom: 2px solid #007BCB;
+	color: #FFF;
+	padding: 16px 0;
+}
+
+a.logo {
+	display: block;
+	width: 90px;
+	height: 78px;
+	background: url('../img/UWVlogo.jpg') no-repeat;
+	float: left;
+}
+
+.btn-uwv {
+	background-color: #0099FF;
+	border-bottom-color: #007BCB;
+	color: #FFF;
+	-webkit-box-shadow:	inset 0px -1px 0px #007BCB;
+	-moz-box-shadow:    inset 0px -1px 0px #007BCB;
+	box-shadow:         inset 0px -1px 0px #007BCB;
+}
+
+.btn-uwv:hover,
+.btn-uwv:visited {
+	color: #FFF;
+}
+
+.btn-uwv:active {
+	padding-top: 7px;
+	padding-bottom: 5px;
+	box-shadow: none;
+	border-color: #007BCB;
+}
+
+.shadow {
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.3);
+	-moz-box-shadow:    0px 1px 5px 0px rgba(50, 50, 50, 0.3);
+	box-shadow:         0px 1px 5px 0px rgba(50, 50, 50, 0.3);
+}
+
+.title {
+	float: left;
+	font-style: italic;
+}
+
+.title h1 {
+	font-size: 26px;
+	font-weight: bold;
+
+}
+
+.title span {
+	color: #ccebff;
+}
+
+/* Main content
+==================*/
+
+.content {
+	background: #FFF;
+	margin-top: 40px;
+}
+
+.content .top {
+	border-bottom: 2px solid #F1F1F1;
+}
+
+.contrast {
+	background-color: #F9F9F9;
+}
+
+.content .step {
+	font-style: italic;
+	color: #999;
+	position: absolute;
+	top: 28px;
+	left: 20px;
+}
+
+.content ul {
+	padding: 0px;
+	color: #ccebff;
+	font-size: 20px;
+	margin: 24px 0 22px;
+	list-style: none;
+	text-align: center;
+}
+
+.content ul li {
+	display: inline-block;
+	width: 88px;
+	height: 18px;
+	margin-right: 10px;
+	position: relative;
+	text-align: left;
+}
+
+.content ul li:last-child {
+	margin: 0px;
+	width: 17px;
+}
+
+.content ul li span {
+	display: block;
+	width: 60px;
+	height: 2px;
+	background-color: #ccebff;
+	position: absolute;
+	top: 14px;
+	right: 0px;
+}
+
+.content .fa-check-circle{
+	color: #a4c527;
+}
+
+.content .active {
+	color: #0099ff;
+}
+
+.content .buttons {
+	margin: 20px 0px;
+}

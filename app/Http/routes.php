@@ -17,6 +17,7 @@ Route::get('/', 'WelcomeController@index');
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function()
 {
 	Route::get('/', 'HomeController@index');
+	Route::get('/question', 'QuestionController@index');
 });
 
 
