@@ -14,8 +14,8 @@
               <div class="uk-nestable-item">
                 <div class="uk-nestable-handle"></div>
                 <span class="question">{{$question->question}}</span>
-                <button class="uk-button uk-button-small uk-button-danger pull-right" type="button">Remove</button>
-                <a href="/admin/question/{{$question->id}}" class="uk-button uk-button-small pull-right">Edit</a>
+                <button class="uk-button uk-button-small uk-button-danger pull-right" type="button">Verwijderen</button>
+                <a href="/admin/question/{{$question->id}}" class="uk-button uk-button-small pull-right">Aanpassen</a>
               </div>
 
               <ul class="uk-nestable-list">
@@ -27,8 +27,8 @@
                     <div class="uk-nestable-item">
                       <div class="uk-nestable-handle"></div>
                       <span class="question">{{$subQuestion->question}}</span>
-                      <button class="uk-button uk-button-small uk-button-danger pull-right" type="button">Remove</button>
-                      <a href="/admin/question/{{$subQuestion->id}}" class="uk-button uk-button-small pull-right">Edit</a>
+                      <button class="uk-button uk-button-small uk-button-danger pull-right" type="button">Verwijderen</button>
+                      <a href="/admin/question/{{$subQuestion->id}}" class="uk-button uk-button-small pull-right">Aanpassen</a>
                     </div>
                   </li>
 
