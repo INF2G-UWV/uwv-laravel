@@ -15,9 +15,11 @@ class CreateQuestionsTable extends Migration {
 		Schema::create('questions', function($table)
 		{
 		    $table->increments('id');
-				$table->integer('parent_id');
+				$table->integer('parent_id')
+					->nullable();
 				$table->string('question', 100);
-				$table->text('block');
+				$table->text('block')
+					->nullable();
 				$table->timestamps();
 		});
 	}
