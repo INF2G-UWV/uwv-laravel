@@ -18,6 +18,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function()
 {
 	Route::get('/', 'HomeController@index');
 	Route::get('/question', 'QuestionController@index');
+	Route::get('/question/create', 'QuestionController@create');
+	Route::get('/question/{id}', 'QuestionController@question');
 });
 
 
