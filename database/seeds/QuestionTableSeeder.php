@@ -12,29 +12,49 @@ class QuestionTableSeeder extends Seeder {
           ->insert([
             'parent_id' => null,
             'question' => 'Vraag 1',
-            'block' => ''
+            'block' => '',
+            'order' => 1
         ]);
 
         DB::table('questions')
           ->insert([
             'parent_id' => 1,
             'question' => 'Vraag 1.1',
-            'block' => ''
+            'block' => '',
+            'order' => 1
+        ]);
+
+        DB::table('questions')
+          ->insert([
+            'parent_id' => 1,
+            'question' => 'Vraag 1.2',
+            'block' => '',
+            'order' => 2
         ]);
 
         DB::table('questions')
           ->insert([
             'parent_id' => null,
             'question' => 'Vraag 2',
-            'block' => ''
+            'block' => '',
+            'order' => 3
         ]);
+
+        DB::table('questions')
+          ->insert([
+            'parent_id' => 4,
+            'question' => 'Vraag 2',
+            'block' => '',
+            'order' => 3
+        ]);
+
 
         DB::table('questions')
           ->insert([
             'parent_id' => null,
             'question' => 'Vraag 3',
-            'block' => ''
+            'block' => '',
+            'order' => 4
         ]);
     }
-
 }

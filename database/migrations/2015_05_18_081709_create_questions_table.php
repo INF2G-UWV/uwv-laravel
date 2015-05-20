@@ -20,6 +20,7 @@ class CreateQuestionsTable extends Migration {
 				$table->string('question', 100);
 				$table->text('block')
 					->nullable();
+				$table->integer('order');
 				$table->timestamps();
 		});
 	}
