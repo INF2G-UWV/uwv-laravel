@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers\Admin;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class QuestionController extends Controller {
@@ -12,11 +13,13 @@ class QuestionController extends Controller {
 	public function index()
 	{
 		$questions = \DB::table('questions')
-			->whereNull('parent_id')
+			->where('parent_id', 0)
+			->orderBy('order', 'ASC')
 			->get();
 
 		$subQuestions = \DB::table('questions')
-			->whereNotNull('parent_id')
+			->where('parent_id', '!=', 0)
+			->orderBy('order', 'ASC')
 			->get();
 
 		return view('admin.question.all', [
@@ -34,6 +37,37 @@ class QuestionController extends Controller {
 		return view('admin.question.single', [
 			'question' => $question
 		]);
+	}
+
+	public function updateOrder(Request $request)
+	{
+		$questions = $request->input('questions');
+
+		foreach ($questions as $question) {
+			\DB::table('questions')
+				->where('id', $question['id'])
+				->update([
+						'order' => $question['order'],
+						'parent_id' => $question['parent']
+					]);
+		}
+
+		return response()->json(['success' => true]);
+	}
+
+	public function update(Request $request, $id)
+	{
+		$parentId = $request->input('parentId');
+		$order = $request->input('order');
+
+		$update = \DB::table('questions')
+			->where('id', $id)
+			->update([
+				'parent_id' => $parentId,
+				'order' => $order
+			]);
+
+		return response()->json($update);
 	}
 
 }

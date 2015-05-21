@@ -10,7 +10,8 @@
 
           @foreach ($questions as $question)
 
-            <li class="uk-nestable-list-item" data-question-id="{{$question->id}}">
+            <li class="uk-nestable-list-item" data-question-id="{{$question->id}}"
+              data-order="{{$question->order}}">
               <div class="uk-nestable-item">
                 <div class="uk-nestable-handle"></div>
                 <span class="question">{{$question->question}}</span>
@@ -23,7 +24,8 @@
 
                   @if($subQuestion->parent_id == $question->id)
 
-                  <li class="uk-nestable-list-item" data-question-id="{{$subQuestion->id}}">
+                  <li class="uk-nestable-list-item" data-question-id="{{$subQuestion->id}}"
+                    data-order="{{$question->order}}">
                     <div class="uk-nestable-item">
                       <div class="uk-nestable-handle"></div>
                       <span class="question">{{$subQuestion->question}}</span>
