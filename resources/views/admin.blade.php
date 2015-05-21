@@ -69,6 +69,7 @@
 	<script src="{{ asset('/3rdparty/blockly/blockly_compressed.js') }}"></script>
 	<script src="{{ asset('/3rdparty/blockly/blocks_compressed.js') }}"></script>
 	<script src="{{ asset('/3rdparty/blockly/msg/js/nl.js') }}"></script>
-	<script src="{{ asset('/app/app.js') }}"></script>
+	<script src="{{ asset('/app/admin/app.js') }}"></script>
+	<script src="{{ asset('/app/admin/uwv.questions.js') }}"></script>
 </body>
 </html>

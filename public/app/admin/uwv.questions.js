@@ -27,10 +27,10 @@ var UWV = function (UWV, $) {
         });
     });
 
-    UWV.updateQuestions(questions, function () {});
+    UWV.updateQuestionsOrder(questions, function () {});
   };
 
-  UWV.updateQuestions = function (questions, callback) {
+  UWV.updateQuestionsOrder = function (questions, callback) {
     $.post('/admin/question/order', {
       questions: questions
     }, callback);
@@ -38,17 +38,3 @@ var UWV = function (UWV, $) {
 
   return UWV;
 } (UWV || {}, jQuery);
-
-
-$(document).ready(function () {
-
-  $('#questions').on('change.uk.nestable', UWV.onQuestionOrderChange);
-
-  var blocklyDiv = document.getElementById('blockly');
-  var workspace = null;
-  if (blocklyDiv) {
-    workspace = Blockly.inject(blocklyDiv, {
-     toolbox: document.getElementById('toolbox')
-   });
-  }
-});
