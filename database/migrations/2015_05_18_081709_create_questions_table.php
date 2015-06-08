@@ -20,6 +20,8 @@ class CreateQuestionsTable extends Migration {
 				$table->string('question', 100);
 				$table->text('block')
 					->nullable();
+				$table->text('code')
+					->nullable();
 				$table->text('information')
 					->nullable();
 				$table->integer('order');

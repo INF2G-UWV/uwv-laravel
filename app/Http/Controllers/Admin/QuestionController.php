@@ -57,17 +57,41 @@ class QuestionController extends Controller {
 
 	public function update(Request $request, $id)
 	{
-		$parentId = $request->input('parentId');
-		$order = $request->input('order');
+		$question = $request->input('question');
+		$block = $request->input('block');
+		$code = $request->input('code');
 
 		$update = \DB::table('questions')
 			->where('id', $id)
 			->update([
-				'parent_id' => $parentId,
-				'order' => $order
+				'question' => $question,
+				'block' => $block,
+				'code' => $code
 			]);
 
-		return response()->json($update);
+		return response()->json(['success' => true]);
+	}
+
+	public function create(Request $request)
+	{
+		$question = $request->input('question');
+
+		$insertId = \DB::table('questions')
+			->insertGetId([
+				'question' => $question,
+				'parent_id' => 0
+			]);
+
+		if ($insertId) {
+			return redirect('admin/question/' . $insertId);
+		}
+
+		return redirect('admin/question');
+	}
+
+	public function add()
+	{
+		return view('admin.question.add');
 	}
 
 }

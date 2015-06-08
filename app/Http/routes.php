@@ -15,15 +15,16 @@ Route::get('/', 'WelcomeController@index');
 
 Route::group(['namespace' => 'Frontend', 'prefix' => 'api'], function()
 {
-    Route::get('/questions', 'QuestionController@questions');
+	Route::get('/questions', 'QuestionController@questions');
 });
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function()
 {
 	Route::get('/', 'HomeController@index');
 	Route::get('/question', 'QuestionController@index');
-	Route::get('/question/create', 'QuestionController@create');
 	Route::get('/question/{id}', 'QuestionController@question');
+	Route::post('/question/{id}', 'QuestionController@update');
+	Route::post('/question/create', 'QuestionController@create');
 	Route::post('/question/order', 'QuestionController@updateOrder');
 });
 

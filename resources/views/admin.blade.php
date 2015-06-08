@@ -9,6 +9,7 @@
 	<link href="{{ asset('/bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('/bower_components/uikit/css/uikit.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('/bower_components/uikit/css/components/nestable.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('/bower_components/ladda/dist/ladda-themeless.min.css') }}" rel="stylesheet">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,13 +34,7 @@
 			<div class="collapse navbar-collapse" id="main-nav">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/admin') }}">Home</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Vragen <span class="caret"></span></a>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="{{ url('admin/question') }}">Overzicht</a></li>
-							<li><a href="{{ url('admin/question/add') }}">Toevoegen</a></li>
-						</ul>
-					</li>
+					<li><a href="{{ url('/admin/question') }}">Vragen</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -66,10 +61,16 @@
 	<script src="{{ asset('/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('/bower_components/uikit/js/uikit.min.js') }}"></script>
 	<script src="{{ asset('/bower_components/uikit/js/components/nestable.min.js') }}"></script>
+	<script src="{{ asset('/bower_components/uikit/js/components/nestable.min.js') }}"></script>
+	<script src="{{ asset('/bower_components/ladda/dist/spin.min.js') }}"></script>
+	<script src="{{ asset('/bower_components/ladda/dist/ladda.min.js') }}"></script>
 	<script src="{{ asset('/3rdparty/blockly/blockly_compressed.js') }}"></script>
 	<script src="{{ asset('/3rdparty/blockly/blocks_compressed.js') }}"></script>
 	<script src="{{ asset('/3rdparty/blockly/msg/js/nl.js') }}"></script>
-	<script src="{{ asset('/app/admin/app.js') }}"></script>
+	<script src="{{ asset('/app/admin/blocks.js') }}"></script>
+	<script src="{{ asset('/app/admin/generators/javascript.js') }}"></script>
+	<script src="{{ asset('/app/admin/generators/uwv.js') }}"></script>
 	<script src="{{ asset('/app/admin/uwv.questions.js') }}"></script>
+	<script src="{{ asset('/app/admin/app.js') }}"></script>
 </body>
 </html>
