@@ -13,6 +13,10 @@
 
 Route::get('/', 'WelcomeController@index');
 
+Route::group(['namespace' => 'Frontend', 'prefix' => 'api'], function()
+{
+    Route::get('/questions', 'QuestionController@questions');
+});
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function()
 {

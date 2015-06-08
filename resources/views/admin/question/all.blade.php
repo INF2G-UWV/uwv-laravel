@@ -1,13 +1,9 @@
 @extends('admin')
 
 @section('content')
-
-
-
   <div class="container">
       <form class="uk-form">
         <ul id="questions" class="uk-nestable" data-uk-nestable="{maxDepth: 2}">
-
           @foreach ($questions as $question)
 
             <li class="uk-nestable-list-item" data-question-id="{{$question->id}}"
@@ -33,14 +29,10 @@
                       <a href="/admin/question/{{$subQuestion->id}}" class="uk-button uk-button-small pull-right">Aanpassen</a>
                     </div>
                   </li>
-
                   @endif
-
                 @endforeach
               </ul>
-
             </li>
-
           @endforeach
         </ul>
       </form>
