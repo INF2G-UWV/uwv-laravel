@@ -52,7 +52,7 @@ var UWV = function(UWV, $) {
     var code = Blockly.JavaScript.workspaceToCode(workspace);
     var question = $(this).find('[name=question]').val();
 
-    $.post(window.location.href, {
+    $.post(window.location.href + '/update', {
       question: question,
       block: text,
       code: code

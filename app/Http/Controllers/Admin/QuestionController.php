@@ -69,7 +69,20 @@ class QuestionController extends Controller {
 				'code' => $code
 			]);
 
+		\Session::flash('message', 'Vraag opgeslagen.');
+
 		return response()->json(['success' => true]);
+	}
+
+	public function delete(Request $request, $id)
+	{
+		$delete = \DB::table('questions')
+			->where('id', $id)
+			->delete();
+
+		\Session::flash('message', 'Vraag verwijderd.');
+
+		return redirect('admin/question');
 	}
 
 	public function create(Request $request)
@@ -83,6 +96,7 @@ class QuestionController extends Controller {
 			]);
 
 		if ($insertId) {
+			\Session::flash('message', 'Vraag toegevoegd.');
 			return redirect('admin/question/' . $insertId);
 		}
 

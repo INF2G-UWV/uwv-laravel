@@ -10,7 +10,8 @@ Blockly.JavaScript.compare = function(block) {
   var statements_then = Blockly.JavaScript.statementToCode(block, 'THEN');
   var statements_else = Blockly.JavaScript.statementToCode(block, 'ELSE');
 
-  var code = 'if (getQuestionValue() ' + operator + ' ' + text_comparison + ') {\n';
+  var code = '// pak de ingevulde waarde van de vraag en voer de vergelijking uit\n';
+  code += 'if (getQuestionValue() ' + operator + ' ' + text_comparison + ') {\n';
   code += statements_then;
   code += '} else {\n';
   code += statements_else;
@@ -20,11 +21,18 @@ Blockly.JavaScript.compare = function(block) {
 };
 
 Blockly.JavaScript.math = function(block) {
-  var dropdown_insurance = block.getFieldValue('insurance');
-  var dropdown_action = block.getFieldValue('action');
-  var text_amount = block.getFieldValue('amount');
+  var OPERATORS = {
+    'sum': '+',
+    'min': '-',
+    'divide': '/',
+    'multiply': '*',
+  };  
+  var insurance = block.getFieldValue('insurance');
+  var operator = OPERATORS[block.getFieldValue('action')];
+  var amount = block.getFieldValue('amount');
 
-  var code = 'math';
+  var code = '// pak de huidige waarde van de verzekering en pas het aan\n';
+  code += insurance + '(' + insurance + '() ' + operator + ' ' + amount + ');';
   return code + '\n';
 };
 

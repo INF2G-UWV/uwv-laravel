@@ -23,7 +23,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function()
 	Route::get('/', 'HomeController@index');
 	Route::get('/question', 'QuestionController@index');
 	Route::get('/question/{id}', 'QuestionController@question');
-	Route::post('/question/{id}', 'QuestionController@update');
+    Route::post('/question/{id}/update', 'QuestionController@update');
+	Route::get('/question/{id}/delete', 'QuestionController@delete');
 	Route::post('/question/create', 'QuestionController@create');
 	Route::post('/question/order', 'QuestionController@updateOrder');
 });

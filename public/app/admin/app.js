@@ -12,7 +12,9 @@ $(document).ready(function() {
     });
 
     var blocks = document.querySelector('#blocks > xml');
-    Blockly.Xml.domToWorkspace(workspace, blocks);
+    if (blocks) {
+      Blockly.Xml.domToWorkspace(workspace, blocks);
+    }
 
     workspace.addChangeListener(updateCode);
   }
