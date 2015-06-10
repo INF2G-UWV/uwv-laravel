@@ -36,6 +36,7 @@ Blockly.Blocks.math = {
       ]), 'action')
       .appendField(new Blockly.FieldTextInput('10'), 'amount');
     this.setPreviousStatement(true);
+    this.setNextStatement(true);
     this.setTooltip('');
   }
 };
