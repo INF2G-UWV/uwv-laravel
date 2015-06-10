@@ -1,19 +1,21 @@
-<div class="col-sm-8">
-    <h3>Vraag {{question.number}}</h3>
-    <form>
-        <div class="form-group">
-            <label for="answer">{{question.question}}</label>
-            <input type="text" id="answer" class="form-control" ng-model="answer">
+<div class="row">
+    <div class="col-sm-8">
+        <h3>Vraag {{question.number}}</h3>
+        <form>
+            <div class="form-group">
+                <label for="answer">{{question.question}}</label>
+                <input type="text" id="answer" class="form-control" ng-model="answer">
+            </div>
+        </form>
+        <p>
+        </p>
+        <div class="buttons">
+            <button class="btn btn-uwv" ng-disabled="hasNoPreviousQuestion()" ng-click="previousQuestion()">Vorige</button>
+            <button class="btn btn-uwv pull-right" ng-click="nextQuestion()">Volgende</button>
         </div>
-    </form>
-    <p>
-    </p>
-    <div class="buttons">
-        <button class="btn btn-uwv" ng-disabled="hasNoPreviousQuestion()" ng-click="previousQuestion()">Vorige</button>
-        <button class="btn btn-uwv pull-right" ng-click="nextQuestion()">Volgende</button>
     </div>
-</div>
-<div class="col-sm-4">
-    <h3>Informatie</h3>
-    <p>{{question.information}}</p>
+    <div class="col-sm-4">
+        <h3>Informatie</h3>
+        <p>{{question.information}}</p>
+    </div>
 </div>
