@@ -1,12 +1,13 @@
 angular.module('uwv')
-  .controller('MainController', function ($scope, $state, Questions) {
+  .controller('MainController', function ($scope, $state, Questions, Tax) {
     $scope.form = {
-        bruto: Questions.getBruto(),
-        netto: 0
+        bruto: Tax.getBruto()
     };
 
+    Questions.started = false;
+
     $scope.start = function () {
-      Questions.setBruto($scope.form.bruto);
+      Tax.setBruto($scope.form.bruto);
       Questions.started = true;
       $state.go('question', {
         questionId: 1

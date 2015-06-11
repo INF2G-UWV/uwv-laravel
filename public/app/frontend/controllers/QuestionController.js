@@ -55,14 +55,19 @@ angular.module('uwv')
 
     function gotoNextQuestion() {
       var nextQuestion = Questions.findNextQuestion(questionId);
-      $state.go('question', {
+
+      if (!nextQuestion) {
+        return $state.go('result');
+      }
+
+      return $state.go('question', {
         questionId: nextQuestion.id
       });
     }
 
     function gotoSubQuestions() {
       var nextQuestion = Questions.findSubQuestion(questionId);
-      $state.go('question', {
+      return $state.go('question', {
         questionId: nextQuestion.id
       });
     }

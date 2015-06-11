@@ -1,19 +1,9 @@
 angular.module('uwv')
-  .service('Questions', function($http) {
+  .service('Questions', function($http, $state) {
     var questions = [];
     this.loaded = false;
-    this.bruto = 20000;
 
     this.started = false;
-
-    this.getBruto = function() {
-      return this.bruto;
-    };
-
-    this.setBruto = function(bruto) {
-      this.bruto = bruto;
-      return;
-    };
 
     this.retrieve = function() {
       var self = this;
@@ -48,7 +38,6 @@ angular.module('uwv')
           return questions[i];
         }
       }
-
       // geen volgende vraag gevonden, probeer vragen met parent_id === 0
       for (i = 0; i < questions.length; i++) {
         if (questions[i].parent_id === 0 && questions[i].order >= question.order && questions[i].id !== question.id && questions[i].id !== question.parent_id) {
@@ -57,7 +46,7 @@ angular.module('uwv')
       }
 
       // einde bereikt
-      // TODO: berekening maken
+      return false;
     };
 
     this.findSubQuestion = function(currentId) {

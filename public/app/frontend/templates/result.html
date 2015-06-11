@@ -1,5 +1,33 @@
 <div class="row">
-    <div class="col-sm-12">
-        {{form.netto}}
+    <div class="col-sm-6">
+        <h3>Resultaat</h3>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td><strong>Bruto</strong></td>
+                    <td>€{{result.bruto | number}}</td>
+                </tr>
+                <tr>
+                    <td><strong>AOW</strong></td>
+                    <td>€{{result.aow | number}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Zorg</strong></td>
+                    <td>€{{result.zorg | number}}</td>
+                </tr>
+                <tr>
+                    <td><strong>WLZ</strong></td>
+                    <td>€{{result.wlz | number}}</td>
+                </tr>
+                <tr>
+                    <td><strong>WW</strong></td>
+                    <td>€{{result.ww | number}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Netto</strong></td>
+                    <td>€{{result.netto | number}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

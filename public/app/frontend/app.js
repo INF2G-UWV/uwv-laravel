@@ -12,6 +12,7 @@ angular.module('uwv', [
     $stateProvider
       .state('home', {
         url: '/',
+        controller: 'MainController',
         templateUrl: 'app/frontend/templates/home.html'
       })
       .state('question', {

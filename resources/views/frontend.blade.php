@@ -11,7 +11,7 @@
     <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
 </head>
 
-<body ng-app="uwv" ng-controller="MainController">
+<body ng-app="uwv">
     <div class="container-fluid topbar shadow">
         <div class="container">
             <div class="row">
