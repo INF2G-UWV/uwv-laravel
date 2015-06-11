@@ -1,8 +1,12 @@
 angular.module('uwv')
-  .controller('QuestionController', function($scope, $state, $stateParams, Questions) {
+  .controller('QuestionController', function($scope, $state, $stateParams, Questions, Tax) {
     var questionId = null;
     $scope.question = {};
     $scope.answer = '';
+
+    if (!Questions.started) {
+      $state.go('home');
+    }
 
     if (!Questions.loaded) {
       Questions.retrieve()
@@ -30,14 +34,7 @@ angular.module('uwv')
 
     $scope.previousQuestion = function() {
       updateAnswer();
-
-      if (Questions.get(questionId - 1)) {
-        $state.go('question', {
-          questionId: questionId - 1
-        });
-      } else {
-        $state.go('home');
-      }
+      window.history.back();
     };
 
     function getQuestion() {
@@ -71,7 +68,14 @@ angular.module('uwv')
     }
 
     function aow(value) {
+      if ($scope.question.answer) {
+        return Tax.setAowPrevious();
+      }
+      if (typeof value === 'undefined') {
+        return Tax.getAow();
+      }
 
+      return Tax.setAow(value);
     }
 
     function zorg(value) {

@@ -4,6 +4,8 @@ angular.module('uwv')
     this.loaded = false;
     this.bruto = 20000;
 
+    this.started = false;
+
     this.getBruto = function() {
       return this.bruto;
     };

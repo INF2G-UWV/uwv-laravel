@@ -7,6 +7,7 @@ angular.module('uwv')
 
     $scope.start = function () {
       Questions.setBruto($scope.form.bruto);
+      Questions.started = true;
       $state.go('question', {
         questionId: 1
       });
