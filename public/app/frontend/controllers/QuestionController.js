@@ -68,9 +68,6 @@ angular.module('uwv')
     }
 
     function aow(value) {
-      if ($scope.question.answer) {
-        return Tax.setAowPrevious();
-      }
       if (typeof value === 'undefined') {
         return Tax.getAow();
       }
@@ -79,14 +76,26 @@ angular.module('uwv')
     }
 
     function zorg(value) {
+      if (typeof value === 'undefined') {
+        return Tax.getZorg();
+      }
 
+      return Tax.setZorg(value);
     }
 
     function wlz(value) {
+      if (typeof value === 'undefined') {
+        return Tax.getWlz();
+      }
 
+      return Tax.setWlz(value);
     }
 
     function ww(value) {
+      if (typeof value === 'undefined') {
+        return Tax.getWw();
+      }
 
+      return Tax.setWw(value);
     }
   });

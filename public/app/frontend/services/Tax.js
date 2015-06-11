@@ -1,23 +1,39 @@
 angular.module('uwv')
   .service('Tax', function(Questions) {
-    var table = [{
-      start: 0,
-      end: 1000,
-      tax: 0
-    }, {
-      start: 1001,
-      end: 2000,
-      tax: 250
-    }, {
-      start: 2001,
-      end: 3500,
-      tax: 500
-    }, {
-      start: 3501,
-      tax: 500
-    }];
+    var aow = 0;
+    var zorg = 0;
+    var wlz = 0;
+    var ww = 0;
 
-    this.calculate = function() {
-        
+    this.getAow = function() {
+      return aow;
+    };
+
+    this.setAow = function(value) {
+      aow = value;
+    };
+
+    this.getZorg = function() {
+      return zorg;
+    };
+
+    this.setZorg = function(value) {
+      zorg = value;
+    };
+
+    this.getWlz = function() {
+      return wlz;
+    };
+
+    this.setWlz = function(value) {
+      wlz = value;
+    };
+
+    this.getWw = function() {
+      return ww;
+    };
+
+    this.setWw = function(value) {
+      ww = value;
     };
   });
