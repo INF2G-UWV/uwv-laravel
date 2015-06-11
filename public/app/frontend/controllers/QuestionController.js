@@ -15,7 +15,7 @@ angular.module('uwv')
       }
     }
 
-    function changeAnswer() {
+    function updateAnswer() {
       Questions.setAnswer(questionId, $scope.answer);
     }
 
@@ -24,22 +24,17 @@ angular.module('uwv')
     };
 
     $scope.nextQuestion = function() {
-      changeAnswer();
-
-      if (Questions.get(questionId + 1)) {
-        $state.go('question', {
-          questionId: questionId + 1
-        });
-      } else {
-        $state.go('result');
-      }
+      updateAnswer();
+      eval($scope.question.code);
     };
 
     $scope.previousQuestion = function() {
-      changeAnswer();
+      updateAnswer();
 
       if (Questions.get(questionId - 1)) {
-        $state.go('question', { questionId: questionId - 1 });
+        $state.go('question', {
+          questionId: questionId - 1
+        });
       } else {
         $state.go('home');
       }
@@ -55,5 +50,39 @@ angular.module('uwv')
       }
 
       questionId = $scope.question.id;
+    }
+
+    function getQuestionValue() {
+      return $scope.answer || 0;
+    }
+
+    function gotoNextQuestion() {
+      var nextQuestion = Questions.findNextQuestion(questionId);
+      $state.go('question', {
+        questionId: nextQuestion.id
+      });
+    }
+
+    function gotoSubQuestions() {
+      var nextQuestion = Questions.findSubQuestion(questionId);
+      $state.go('question', {
+        questionId: nextQuestion.id
+      });
+    }
+
+    function aow(value) {
+
+    }
+
+    function zorg(value) {
+
+    }
+
+    function wlz(value) {
+
+    }
+
+    function ww(value) {
+
     }
   });
