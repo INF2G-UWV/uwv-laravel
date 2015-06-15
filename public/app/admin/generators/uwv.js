@@ -1,3 +1,6 @@
+/**
+ * Compare the value of a answer
+ */
 Blockly.JavaScript.compare = function(block) {
   var OPERATORS = {
     'EQ': '==',
@@ -20,6 +23,9 @@ Blockly.JavaScript.compare = function(block) {
   return code + '\n';
 };
 
+/**
+ * Do math operations on insurances
+ */
 Blockly.JavaScript.math = function(block) {
   var OPERATORS = {
     'sum': '+',

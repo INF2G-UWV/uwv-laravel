@@ -5,6 +5,9 @@ use App\Http\Controllers\Controller;
 
 class QuestionController extends Controller {
 
+    /**
+     * Retrieve all questions and return in json format
+     */
     public function questions()
     {
         $questions = \DB::table('questions')

@@ -10,6 +10,9 @@ class QuestionController extends Controller {
 		$this->middleware('auth');
 	}
 
+	/**
+	 * Retrieve all questions and return a view page
+	 */
 	public function index()
 	{
 		$questions = \DB::table('questions')
@@ -28,6 +31,9 @@ class QuestionController extends Controller {
 		]);
 	}
 
+	/**
+	 * Retrieve a specific question and return a view page
+	 */
 	public function question($id)
 	{
 		$question = \DB::table('questions')
@@ -39,6 +45,9 @@ class QuestionController extends Controller {
 		]);
 	}
 
+	/**
+	 * Update the order of all questions
+	 */
 	public function updateOrder(Request $request)
 	{
 		$questions = $request->input('questions');
@@ -55,6 +64,9 @@ class QuestionController extends Controller {
 		return response()->json(['success' => true]);
 	}
 
+	/**
+	 * Update a specific question
+	 */
 	public function update(Request $request, $id)
 	{
 		$question = $request->input('question');
@@ -76,6 +88,9 @@ class QuestionController extends Controller {
 		return response()->json(['success' => true]);
 	}
 
+	/**
+	 * Delete a specific question
+	 */
 	public function delete(Request $request, $id)
 	{
 		$delete = \DB::table('questions')
@@ -87,6 +102,9 @@ class QuestionController extends Controller {
 		return redirect('admin/question');
 	}
 
+	/**
+	 * Create a new question
+	 */
 	public function create(Request $request)
 	{
 		$question = $request->input('question');
@@ -104,10 +122,4 @@ class QuestionController extends Controller {
 
 		return redirect('admin/question');
 	}
-
-	public function add()
-	{
-		return view('admin.question.add');
-	}
-
 }

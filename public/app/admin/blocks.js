@@ -1,3 +1,6 @@
+/**
+ * Block to compare value of an answer with an if else statement
+ */
 Blockly.Blocks.compare = {
   init: function() {
     this.setColour(210);
@@ -17,6 +20,9 @@ Blockly.Blocks.compare = {
   }
 };
 
+/**
+ * Block to do math operations on insurances
+ */
 Blockly.Blocks.math = {
   init: function() {
     this.setColour(120);
@@ -41,6 +47,9 @@ Blockly.Blocks.math = {
   }
 };
 
+/**
+ * Block to go to subquestions
+ */
 Blockly.Blocks.goto_subquestions = {
   init: function() {
     this.setColour(330);
@@ -51,6 +60,9 @@ Blockly.Blocks.goto_subquestions = {
   }
 };
 
+/**
+ * Block to go to next questions
+ */
 Blockly.Blocks.goto_next_question = {
   init: function() {
     this.setColour(330);
