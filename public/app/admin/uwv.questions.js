@@ -51,10 +51,12 @@ var UWV = function(UWV, $) {
     var text = Blockly.Xml.domToText(dom);
     var code = Blockly.JavaScript.workspaceToCode(workspace);
     var question = $(this).find('[name=question]').val();
+    var information = $(this).find('[name=information]').val();
 
     $.post(window.location.href + '/update', {
       question: question,
       block: text,
+      information: information,
       code: code
     }, function(result) {
       window.location.reload();

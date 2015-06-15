@@ -60,11 +60,13 @@ class QuestionController extends Controller {
 		$question = $request->input('question');
 		$block = $request->input('block');
 		$code = $request->input('code');
+		$information = $request->input('information');
 
 		$update = \DB::table('questions')
 			->where('id', $id)
 			->update([
 				'question' => $question,
+				'information' => $information,
 				'block' => $block,
 				'code' => $code
 			]);
